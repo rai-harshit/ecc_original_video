@@ -1,0 +1,2 @@
+#!/bin/bash
+ffmpeg -i /home/g_host/Desktop/extract/a.mp4 -vf  "select=gt(scene\,0.005), scale=300:300, showinfo" -vsync vfr /home/g_host/Desktop/extract/frames/%03d.jpg 2>&1 | grep -o "pts_time:[0-9.]*" > timestamp.log
